@@ -116,6 +116,8 @@ pie(table(readxl_data$AREA),
 install.packages("dplyr")
 library(dplyr)
 
+AMT <- readxl_data$AMT17+readxl_data$AMT16
+
 readxl_data %>%
   group_by(Gender) %>%
   summarise(Sum_AMT <- sum(AMT),
@@ -123,3 +125,4 @@ readxl_data %>%
             MIN_AMT <- min(AMT),
             MAX_AMT <- max(AMT),
             n=n()) 
+
